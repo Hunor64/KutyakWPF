@@ -11,22 +11,22 @@ namespace Kutyak
         int id;
         int fajtaID;
         int nevID;
-        int életkor;
+        int eletkor;
         string utolsoOrvosiEllenorzes;
 
-        public Kutyak(int id, int fajtaID, int nevID, int életkor, string utolsoOrvosiEllenorzes)
+        public Kutyak(int id, int fajtaID, int nevID, int eletkor, string utolsoOrvosiEllenorzes)
         {
             this.id = id;
             this.fajtaID = fajtaID;
             this.nevID = nevID;
-            this.életkor = életkor;
+            this.eletkor = eletkor;
             this.utolsoOrvosiEllenorzes = utolsoOrvosiEllenorzes;
         }
 
         public int Id { get => id;}
         public int FajtaID { get => fajtaID; }
         public int NevID { get => nevID;}
-        public int Életkor { get => életkor;}
+        public int Eletkor { get => eletkor;}
         public string UtolsoOrvosiEllenorzes { get => utolsoOrvosiEllenorzes;}
     }
 }

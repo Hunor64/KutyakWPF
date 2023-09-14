@@ -27,11 +27,15 @@ namespace Kutyak
         List<KutyakFajta> kutyakFajtaLista = new List<KutyakFajta>();
         public MainWindow()
         {
+            //1
             InitializeComponent();
             kutyakBeolvas();
             KutyaFajtaBeolvas();
+            //3
             lblKutyakSzama.Content = kutyakNeveLista.Count();
         }
+
+        //2
         private void kutyakBeolvas()
         {
             string fileNeve = "Kutya.csv";
@@ -42,7 +46,9 @@ namespace Kutyak
                 kutyakLista.Add(new Kutyak(Convert.ToInt32(kutyakAdd[0]), Convert.ToInt32(kutyakAdd[1]), Convert.ToInt32(kutyakAdd[2]), Convert.ToInt32(kutyakAdd[3]), kutyakAdd[4]));
             }
         }
-        private void KutyaFajtaBeolvas() 
+
+        //4
+        private void KutyaFajtaBeolvas()
         {
             string fileNeve = "KutyaFajtak.csv";
             var kutyakKiolva = File.ReadAllLines(fileNeve);
@@ -53,6 +59,7 @@ namespace Kutyak
             }
         }
 
+        //5
         private void kutyakNeveBeolvas()
         {
             string fileNeve = "KutyaNevek.csv";
@@ -64,5 +71,16 @@ namespace Kutyak
             }
         }
 
+        //6
+        private double atlagEletkortSzamol()
+        {
+            List<double> doubles = new List<double>();
+            for (int i = 0; i < kutyakLista.Count(); i++)
+            {
+                doubles.Add(kutyakLista[i].Eletkor);
+            }
+            double atlag = doubles.Average();
+            return Math.Round(atlag, 2);
+        }
     }
 }
